@@ -6,11 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
-* @author hjly
-* @description 针对表【book】的数据库操作Mapper
-* @createDate 2022-08-22 12:15:08
-* @Entity com.wh.model.Book
-*/
+ * @author Wang Hao
+ * @since 2022/7/18 11:49
+ */
 @Mapper
 public interface BookMapper {
 

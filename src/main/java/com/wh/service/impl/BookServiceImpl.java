@@ -20,26 +20,31 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean save(Book book) {
-        return bookMapper.save(book)>0;
+        return bookMapper.insert(book)>0;
     }
 
     @Override
-    public boolean delete(Integer id) {
-        return bookMapper.delete(id)>0;
+    public boolean delete(Long id) {
+        return bookMapper.deleteByPrimaryKey(id)>0;
     }
 
     @Override
     public boolean update(Book book) {
-        return bookMapper.update(book)>0;
+        return bookMapper.updateByPrimaryKey(book)>0;
     }
 
     @Override
-    public Book getBookById(Integer id) {
-        return bookMapper.getBookById(id);
+    public Book getBookById(Long id) {
+        return bookMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public List<Book> listBooks() {
         return bookMapper.listBooks();
+    }
+
+    @Override
+    public List<Book> listBooksByName(String name) {
+        return bookMapper.listBooksByName(name);
     }
 }
